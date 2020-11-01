@@ -57,7 +57,7 @@ h1.title {
 /* ******************  Panel  ****************** */
 
 .panel {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-modal-color);
   position: fixed;
   z-index: 999;
   top: 0;
@@ -69,6 +69,13 @@ h1.title {
   justify-content: center;
   align-items: center;
   transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.panel.is-active {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 /* ******************  Links  ****************** */
@@ -91,15 +98,14 @@ h1.title {
 
 /* ******************  Secciones  ****************** */
 
-.main {
-  margin-top: 6rem;
-}
-
 .main .section {
   min-height: 100vh;
   padding: 1rem 2rem;
   width: 100%;
   max-width: var(--container-width);
+  padding-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section .title {
